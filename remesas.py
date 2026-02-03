@@ -61,7 +61,7 @@ mean_fx = fx['Close'].mean()
 @st.cache_data(ttl=3600)
 
 def get_news():
-    ticker = yf.Ticker("MXN=X")
+    ticker = yf.Ticker("BTC-USD")  # MXN=X
     news = ticker.news
     if news is None:
         return []
