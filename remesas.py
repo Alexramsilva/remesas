@@ -45,7 +45,7 @@ labels = ["negative", "neutral", "positive"]
 @st.cache_data(ttl=3600)
 
 def get_fx_data(period="6mo"):
-    ticker = yf.Ticker("MXN=X")
+    ticker = yf.Ticker("BTC-USD") # MXN=X
     df = ticker.history(period=period)
     return df
 
