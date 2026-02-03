@@ -45,7 +45,7 @@ labels = ["negative", "neutral", "positive"]
 @st.cache_data(ttl=3600)
 
 def get_fx_data(period="6mo"):
-    ticker = yf.Ticker("BTC-USD") # MXN=X
+    ticker = yf.Ticker("MXN=X") # MXN=X
     df = ticker.history(period=period)
     return df
 
@@ -61,7 +61,7 @@ mean_fx = fx['Close'].mean()
 @st.cache_data(ttl=3600)
 
 def get_news():
-    ticker = yf.Ticker("BTC-USD")  # MXN=X
+    ticker = yf.Ticker("MXN=X")  # MXN=X
     news = ticker.news
     if news is None:
         return []
